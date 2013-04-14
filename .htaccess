@@ -1,0 +1,6 @@
+RewriteEngine On
+#RewriteLog /tmp/mylog
+#RewriteLogLevel 9
+RewriteRule MinecraftMe.png minecraftServerBanner.php
+RewriteRule MinecraftMe_Rose.png minecraftServerBanner.php?image=rose
+RewriteRule MinecraftMe_Chase.png minecraftServerBanner.php?image=chase
