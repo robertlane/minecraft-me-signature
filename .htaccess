@@ -4,3 +4,5 @@ RewriteEngine On
 RewriteRule MinecraftMe.png minecraftServerBanner.php
 RewriteRule MinecraftMe_Rose.png minecraftServerBanner.php?image=rose
 RewriteRule MinecraftMe_Chase.png minecraftServerBanner.php?image=chase
+RewriteRule MinecraftMe_Joe.png minecraftServerBanner.php?image=joe
+RewriteRule MinecraftMe_Imp.png minecraftServerBanner.php?image=imperialphantom

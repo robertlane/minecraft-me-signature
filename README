@@ -4,6 +4,17 @@ minecraft-me-signature
 Forum compatable signature for the Minecraft Me server stats.
 
 Current Images included are:
-Rose (Default)
-SirChaos
-PayBack
+* GGTV Logo (Default)
+    MinecraftMe.png
+* SirChaos
+    MinecraftMe_Chase.png
+* PayBack
+    MinecraftMe_Joe.png
+* Rose
+    MinecraftMe_Rose.png
+
+Current to do list:
+
+* Add more images, such as a creeper
+* Implement precache for faster loading
+* Finish Offline Mode

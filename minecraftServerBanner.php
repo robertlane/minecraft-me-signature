@@ -46,7 +46,8 @@ class MCServerEngine {
 
 $minecraftme = new MCServerEngine('mcserver.geekgamer.tv');
 //Choose the base image based on url received
-switch ($_GET["image"]) {
+$bg_image = strtolower($_GET["image"]);
+switch ($bg_image) {
     case "rose":
         $image = imagecreatefrompng('images/rose.png');
         break;
@@ -54,13 +55,15 @@ switch ($_GET["image"]) {
         $image = imagecreatefrompng('images/chase.png');
         break;
     case "joe":
-        $image = imagecreatefrompng('images/rose.png');
+        $image = imagecreatefrompng('images/joe.png');
+        break;
+    case "imperialphantom":
+        $image = imagecreatefrompng('images/imp.png');
         break;
     default:
-        $image = imagecreatefrompng('images/rose.png');
+        $image = imagecreatefrompng('images/default.png');
 }
 
-in
 
 header('content-type: image/png');
 
@@ -69,6 +72,7 @@ header('content-type: image/png');
 
 $blue = imagecolorallocate($image, 0, 0, 225);
 $white = imagecolorallocate($image, 255, 255, 225);
+$black = imagecolorallocate($image, 1, 1, 1);
 
 $font_path = './fonts/LogoCraft.ttf';
 $font_path01 = './fonts/Minecraft.ttf';
@@ -76,13 +80,17 @@ $font_path01 = './fonts/Minecraft.ttf';
 $string = 'MINECRAFTME';
 $players = 'Players: '.$minecraftme->online_players.'/'.$minecraftme->max_players;
 
+imagettftext($image,  16, 0, 12, 41, $black, $font_path, $string);
 imagettftext($image,  16, 0, 10, 40, $white, $font_path, $string);
 
+imagettftext($image,  12, 0, 13, 61, $black, $font_path01, $minecraftme->motd);
 imagettftext($image,  12, 0, 11, 60, $white, $font_path01, $minecraftme->motd);
 
-imagettftext($image,  12, 0, 11, 125, $white, $font_path01, $players);
+imagettftext($image,  12, 0, 13, 106, $black, $font_path01, $players);
+imagettftext($image,  12, 0, 11, 105, $white, $font_path01, $players);
 
-imagettftext($image,  12, 0, 11, 140, $white, $font_path01, 'mcserver.geekgamer.tv');
+imagettftext($image,  12, 0, 13, 123, $black, $font_path01, 'mcserver.geekgamer.tv');
+imagettftext($image,  12, 0, 11, 122, $white, $font_path01, 'mcserver.geekgamer.tv');
 
 imagepng($image);
 
